@@ -5,9 +5,9 @@
 Lists
 Perhaps the most common collection in nearly every programming language is the array, or ordered group of objects. In Dart, arrays are List objects, so we usually just call them lists.
 Dart list literals look like JavaScript array literals. Here’s a simple Dart list:
-```
+···dart
 var list = [1, 2, 3];
-```
+···dart
 Lists use zero-based indexing, where 0 is the index of the first element and list.length - 1 is the index of the last element. You can get a list’s length and refer to list elements just as you would in JavaScript:
 ```
 var list = [1, 2, 3];
