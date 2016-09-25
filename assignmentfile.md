@@ -51,8 +51,11 @@ var s2 = "Double quotes work just as well.";//定义字符串s2
  
 ``` 
  var s = 'string interpolation';//定义字符串s
-'Dart has $s, which is very handy.' == 'Dart has string interpolation, which is very handy.'//利用$s代替字符串s，这里的s是一个标识符所以{ }可以省略。
-'That deserves all caps. ${s.toUpperCase()} is very handy!' == 'That deserves all caps.STRING INTERPOLATION is very handy!'//利用${s.toUpperCase()}代替字符串s的大写形式，这里的{ }不能够省略。
+'Dart has $s, which is very handy.' == 'Dart has string interpolation, which is very handy.'
+//利用$s代替字符串s，这里的s是一个标识符所以{ }可以省略。
+'That deserves all caps. ${s.toUpperCase()} is very handy!'
+== 'That deserves all caps.STRING INTERPOLATION is very handy!'
+//利用${s.toUpperCase()}代替字符串s的大写形式，这里的{ }不能够省略。
 ```
 
  - 可以将多个字符串放在一起或者使用“+”来连接字符串
@@ -62,7 +65,8 @@ var s2 = "Double quotes work just as well.";//定义字符串s2
 " works even over line breaks.";//定义字符串s1
 s1 == 'String concatenation works even over line breaks.'//字符串s1
 var s2 = 'The + operator '
- - 'works, as well.';//定义字符串s2
+ +'works, as well.';//定义字符串s2
+ s2=='The + operator works, as well.'//字符串s2
 ```
 
  - 使用三个单引号或者双引号来定义多行的字符串
@@ -166,7 +170,8 @@ assert(!'  '.isEmpty);//只有空白的字符串不为空
 
 ```  
 var greetingTemplate = 'Hello, NAME!';//定义字符串greetingTemplate
-var greeting = greetingTemplate .replaceAll(new RegExp('NAME'), 'Bob');//利用replaceAll( )代替字符串greetingTemplate中的子串并赋值给字符串greeting
+var greeting = greetingTemplate .replaceAll(new RegExp('NAME'), 'Bob');
+//利用replaceAll( )代替字符串greetingTemplate中的子串并赋值给字符串greeting
 assert(greeting !=greetingTemplate); // 字符串greetingTemplate并没有被改变
 ```
 
@@ -176,10 +181,12 @@ assert(greeting !=greetingTemplate); // 字符串greetingTemplate并没有被改
 ```  
 var sb = new StringBuffer();//定义一个字符串变量sb并以编成方式生成一个字符串
 sb..write('Use a StringBuffer for ')//用write写入字符串sb的内容
-  ..writeAll(['efficient', 'string', 'creation'], '  ')//用writeAll写入字符串sb的一部分，第一个参数是写入的内容，第二个参数是分隔符
+  ..writeAll(['efficient', 'string', 'creation'], '  ')
+  //用writeAll写入字符串sb的一部分，第一个参数是写入的内容，第二个参数是分隔符
   ..write('.');//用write写入字符串sb内容
 var fullString = sb.toString( );  //用toString( )将字符串sb赋值给字符串fullString
-assert(fullString == 'Use a StringBuffer for efficient string creation.');  //字符串fullString与字符串sb内容相同
+assert(fullString == 'Use a StringBuffer for efficient string creation.'); 
+//字符串fullString与字符串sb内容相同
 ```
 
  - 	正则表达式
@@ -190,10 +197,11 @@ var numbers = new RegExp(r'\d+');// 定义一个或多个数字的正则表达�
 注：\d 表示与一个数字字符匹配，等价于[0-9]。“+” 表示匹配前一个字符一次或多次。
 var allCharacters = 'llamas live fifteen to twenty years';//定义一个字符串allCharacters
 var someDigits = 'llamas live 15 to 20 years'; //定义一个字符串someDigits
-assert(!allCharacters.contains(numbers));//contains( )中使用正则表达式，字符串allCharacters中并没有包含数字，所以前面有一个！符号表示“非”
+assert(!allCharacters.contains(numbers));
+//contains( )中使用正则表达式，字符串allCharacters中并没有包含数字，所以前面有一个！符号表示“非”
 assert(someDigits.contains(numbers));// contains( )中使用正则表达式，字符串someDigits中包含数字
 
-// 用“XX”代替字符串someDigits中所有的数字
+用“XX”代替字符串someDigits中所有的数字:
 var exedOut = someDigits.replaceAll(numbers, 'XX'); //定义一个字符串变量exedOut，并用 “XX”替换字符串someDigits中的数字后赋值给字符串exedOut。
 assert(exedOut == 'llamas live XX to XX years');//字符串exedOut
 ```
@@ -203,7 +211,7 @@ assert(exedOut == 'llamas live XX to XX years');//字符串exedOut
 ```  
 var numbers = new RegExp(r'\d+');// 定义一个或多个数字的正则表达式。
 var someDigits = 'llamas live 15 to 20 years';// 定义一个字符串someDigits
-//检查在字符串中是否有匹配
+检查在字符串中是否有匹配:
 assert(numbers.hasMatch(someDigits));//检查字符串someDigits与正则表达式numbers匹配
 for (var match in numbers.allMatches(someDigits)) //遍历字符串someDigits中与正则表达式numbers所有的匹配
  { print(match.group(0)); } // 15, 20
@@ -290,7 +298,7 @@ import 命令导入了一个特别的库， 这样程序就可以使用这个库
 使用 querySelector() 函数，将id=”test”的text属性修改为'Wake up, sleepy head!';
 保存文档。
 
-4.	运行
+4. 运行
 Run-Run ’index.html’完成运行
 总的来说，dart是通过querySelector( )函数中的参数来对html文档进行操作，当然html文档中也要引用dart文件。
 
