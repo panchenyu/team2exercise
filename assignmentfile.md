@@ -10,26 +10,17 @@ for (var i = 0; i < 2; i++) {callbacks.add(() => print(i));}//循环添加列表
 callbacks.forEach((c) => c( ));//遍历callbacks
 ```
 注：forEach不使用迭代计数器的遍历
-
- - 
-
-列表和集合可以用for-in来遍历其中的元素
+ - 列表和集合可以用for-in来遍历其中的元素
 ```  
 var collection = [0, 1, 2];//定义一个列表collection
 for (var x in collection) {print(x);}//用for-in语句遍历列表中的每个元素
 ```
 ###    while 和do-while 循环
-
- - 
-
-while循环评估循环条件是在循环之前
+ - while循环评估循环条件是在循环之前
 ```  
 while (!isDone()) { doSomething();}//while循环，当isDone( )是假的时候执行循环
 ```
-
- - 
-
-do-while循环评估条件是在循环之后
+ - do-while循环评估条件是在循环之后
 ```
 do {printLine();} while (!atEndOfPage());//do-while循环，当atEndOfPage()是假时执行循环
 ```
@@ -188,7 +179,6 @@ Selectors应该是一个使用CSS选择器语法的字符，常用的 CSS 选择
 var element1 = document.querySelector('.className');    //定义一个参数为“类”的querySelector（）函数
 var element2 = document.querySelector('#id'); //定义一个参数为“id”的querySelector( )函数	
 ```
-
 ###源：
 ```  
 Element querySelector(String selectors) => document.querySelector(selectors);
@@ -211,7 +201,7 @@ button.text = 'Confirm';//将button的text赋值为“Confirm”
 ## 8. 详细解释dart如何操作html的文档
 1. 创建一个新的dart应用
 File -> New project -> Dart(命名为first) -> Uber Simple Web Application - an absolote bare-bones web app -> create
-2.	编辑HTML文件
+2. 编辑HTML文件
 Dart 编辑器创建一个应用的时候， 也会创建一些模板 HTML 代码。 双击 index.html 打开该文件。可以看到里面会有如下内容：
 ```  
 <script defer type="application/dart" src="main.dart"></script>//将dart引入到html中
