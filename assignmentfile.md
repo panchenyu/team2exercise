@@ -202,7 +202,8 @@ assert(!allCharacters.contains(numbers));
 assert(someDigits.contains(numbers));// contains( )中使用正则表达式，字符串someDigits中包含数字
 
 用“XX”代替字符串someDigits中所有的数字:
-var exedOut = someDigits.replaceAll(numbers, 'XX'); //定义一个字符串变量exedOut，并用 “XX”替换字符串someDigits中的数字后赋值给字符串exedOut。
+var exedOut = someDigits.replaceAll(numbers, 'XX'); 
+//定义一个字符串变量exedOut，并用 “XX”替换字符串someDigits中的数字后赋值给字符串exedOut。
 assert(exedOut == 'llamas live XX to XX years');//字符串exedOut
 ```
 
@@ -264,41 +265,32 @@ button.text = 'Confirm';//将button的text赋值为“Confirm”
 ```
 
 ## 8. 详细解释dart如何操作html的文档
-1. 创建一个新的dart应用
+####  1. 创建一个新的dart应用
 File -> New project -> Dart(命名为first) -> Uber Simple Web Application - an absolote bare-bones web app -> create
-
-2. 编辑HTML文件
+####  2. 编辑HTML文件
 Dart 编辑器创建一个应用的时候， 也会创建一些模板 HTML 代码。 双击 index.html 打开该文件。可以看到里面会有如下内容：
-
 ```  
 <script defer type="application/dart" src="main.dart"></script>//将dart引入到html中
 <script defer src="packages/browser/dart.js"></script>
 ```
-
 第一个脚本文件包含了 first 应用的代码。type 属性指定了该脚本的类型 application/dart。src 属性告诉浏览器脚本文件的位置。Dart 代码文件应该和应用它的 HTML 文件放到同一个目录下。
 第二个 script 标签引用了一个负责启动 Dart VM 的引导程序，并且处理不支持 Dart 的浏览器。
-
 ```  
 在<body></body>标签中写入<p id="test">Hello World!</p>//id=”test”的一行文字
 ```
-
 保存文档。
-
-3.	编辑 Dart 源代码
+####  3. 编辑 Dart 源代码
 打开 main.dart 文件并修改 为如下代码：
-
 ```  
 import 'dart:html';//导入库
 void main() {
   querySelector('#test').text = 'Wake up, sleepy head!';
 }
 ```
-
 import 命令导入了一个特别的库， 这样程序就可以使用这个库中的所有类和函数了。
 使用 querySelector() 函数，将id=”test”的text属性修改为'Wake up, sleepy head!';
 保存文档。
-
-4. 运行
+####  4. 运行
 Run-Run ’index.html’完成运行
 总的来说，dart是通过querySelector( )函数中的参数来对html文档进行操作，当然html文档中也要引用dart文件。
 
