@@ -1,0 +1,21 @@
+<html>
+<head>
+
+</head>
+
+<body>
+<div class="widgets">
+    <input (input)="inputWord($event.target.value)"
+           type="text" maxlength="15">
+    <button [disabled]="!isButtonEnabled" (click)="translateWord()">
+        {{ButtonText}}
+    </button>
+</div>
+<!--翻译显示器-->
+<div>
+    <div>中文翻译：</div>
+    <div>{{Translation}}</div>
+</div>
+</body>
+
+</html>
